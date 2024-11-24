@@ -1,21 +1,33 @@
 #!/bin/bash
 
-# Check if Homebrew is installed
-if ! command -v brew &> /dev/null
-then
-    echo "Homebrew not found. Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Check if Podman is installed
+if ! command -v podman &> /dev/null; then
+  echo "Podman not found. Installing Podman..."
+  # Check if Homebrew is installed
+  if ! command -v brew &> /dev/null; then
+    echo "Homebrew not found. Please install Homebrew to continue."
+    exit 1
+  fi
+  # Install Podman
+  echo "Installing Podman..."
+  brew install podman
 else
-    echo "Homebrew is already installed."
+  echo "Podman is already installed."
 fi
 
-# Update Homebrew
-echo "Updating Homebrew..."
-brew update
-
-# Install Podman
-echo "Installing Podman..."
-brew install podman
+# Check if podman-compose is installed
+if ! command -v podman-compose &> /dev/null; then
+  echo "podman-compose not found. Installing podman-compose..."
+  # Check if pip is installed
+  if ! command -v pip &> /dev/null; then
+    echo "pip not found. Please install pip to continue."
+    exit 1
+  fi
+  # Install podman-compose
+  pip install podman-compose
+else
+  echo "podman-compose is already installed."
+fi
 
 # Initialize Podman
 echo "Initializing Podman..."
