@@ -1,5 +1,6 @@
+tqdm
 groq
 pandas
-# torch
+torch
 transformers
 kafka-python-ng
