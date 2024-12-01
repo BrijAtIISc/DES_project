@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  cassandra:
+    build: .
+    container_name: cassandra-db
+    ports:
+      - "9042:9042" # Exposes the default Cassandra port for client connections
+    environment:
+      - CASSANDRA_CLUSTER_NAME=TestCluster
+      - CASSANDRA_DC=dc1
+      - CASSANDRA_RACK=rack1
+      - CASSANDRA_SEEDS=cassandra
+      - CASSANDRA_START_RPC=true
+    volumes:
+      - ./db:/var/lib/cassandra # Persistent storage
