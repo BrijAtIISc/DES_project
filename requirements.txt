@@ -4,3 +4,5 @@ pandas
 torch
 transformers
 kafka-python-ng
+jupyter
+ipywidgets
