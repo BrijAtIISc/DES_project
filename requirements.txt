@@ -6,3 +6,4 @@ transformers
 kafka-python-ng
 jupyter
 ipywidgets
+pyspark
