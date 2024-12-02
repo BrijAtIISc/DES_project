@@ -1,7 +1,5 @@
-# steps to install and setup graphana dashboard
+# Steps to install and setup graphana dashboard
 Grafana Setup on macOS
-
-This guide walks you through the process of setting up Grafana on macOS. Grafana is a powerful open-source analytics and monitoring platform that helps you visualize time-series data.
 
 Prerequisites
 
@@ -84,17 +82,15 @@ brew services restart grafana
 Permissions Issues
 If you face permissions-related errors, ensure that the user running Grafana has the appropriate access to the necessary directories and files.
 
-Uninstall Grafana
-
-To uninstall Grafana, run:
-
-brew uninstall grafana
-To also remove the Grafana data directory (optional):
-
-rm -rf /usr/local/var/lib/grafana
 Additional Resources
 
 Grafana Documentation
 Grafana GitHub Repository
 Grafana Community
+
+
+## For GUI related credentials:
+Link: http://localhost:3000
+username: admin
+password: DES_project
 
