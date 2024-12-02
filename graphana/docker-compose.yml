@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./db:/var/lib/grafana
+    environment:
+      GF_INSTALL_PLUGINS: "hadesarchitect-cassandra-datasource" # Automatically install the Cassandra plugin
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    external: true
