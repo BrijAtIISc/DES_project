@@ -1,2 +1,5 @@
 # useful links
 https://grafana.com/docs/grafana/latest/fundamentals/timeseries/
+
+# for creating dashboards, using time-series
+https://github.com/grafana/grafana-infinity-datasource
